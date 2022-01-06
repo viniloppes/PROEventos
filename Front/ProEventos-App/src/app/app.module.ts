@@ -30,6 +30,13 @@ import { LoginComponent } from './components/user/login/login.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { PerfilComponent } from './components/user/perfil/perfil.component';
 
+
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
+import { defineLocale } from 'ngx-bootstrap/chronos';
+import { ptBrLocale } from 'ngx-bootstrap/locale';
+defineLocale('pt-br', ptBrLocale);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +72,8 @@ import { PerfilComponent } from './components/user/perfil/perfil.component';
       progressBar: true,
     }),
     NgxSpinnerModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
   ],
   providers: [EventoService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
