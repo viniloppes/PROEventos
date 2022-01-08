@@ -34,7 +34,7 @@ namespace ProEventos.Persistence.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     MiniCurriculo = table.Column<string>(type: "TEXT", nullable: true),
-                    ImageURL = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemURL = table.Column<string>(type: "TEXT", nullable: true),
                     Telefone = table.Column<string>(type: "TEXT", nullable: true),
                     Email = table.Column<string>(type: "TEXT", nullable: true)
                 },
@@ -71,14 +71,12 @@ namespace ProEventos.Persistence.Migrations
                 name: "PalestrantesEventos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
                     PalestranteId = table.Column<int>(type: "INTEGER", nullable: false),
                     EventoId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PalestrantesEventos", x => x.Id);
+                    table.PrimaryKey("PK_PalestrantesEventos", x => new { x.EventoId, x.PalestranteId });
                     table.ForeignKey(
                         name: "FK_PalestrantesEventos_Eventos_EventoId",
                         column: x => x.EventoId,
@@ -124,11 +122,6 @@ namespace ProEventos.Persistence.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Lotes_EventoId",
                 table: "Lotes",
-                column: "EventoId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PalestrantesEventos_EventoId",
-                table: "PalestrantesEventos",
                 column: "EventoId");
 
             migrationBuilder.CreateIndex(

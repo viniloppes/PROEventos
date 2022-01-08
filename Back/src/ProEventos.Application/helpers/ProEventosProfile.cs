@@ -12,7 +12,7 @@ namespace ProEventos.API.helpers
             CreateMap<Evento, EventoDto>();
             CreateMap<EventoDto, Evento>();
             CreateMap<Lote, LoteDto>();
-            // CreateMap<LoteDto, Lote>();  
+            CreateMap<LoteDto, Lote>();  
             CreateMap<RedeSocial, RedeSocialDto>(); 
             // CreateMap<RedeSocialDto, RedeSocial>();  
             CreateMap<Palestrante, PalestranteDto>(); 
