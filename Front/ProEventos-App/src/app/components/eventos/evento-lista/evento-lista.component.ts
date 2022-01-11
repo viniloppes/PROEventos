@@ -1,5 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '@environments/environment';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
@@ -58,6 +59,12 @@ export class EventoListaComponent implements OnInit {
   }
   public alterarImg() {
     this.showImg = !this.showImg;
+  }
+
+  public mostraImagem(imagemURL: string): string{
+    return (imagemURL !== '')
+    ? `${environment.apiURL}recursos/imagem-evento/${imagemURL}`
+    : '/assets/semImagem.png'
   }
 
   public carregarEventos(): void {

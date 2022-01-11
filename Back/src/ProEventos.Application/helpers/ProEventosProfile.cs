@@ -9,15 +9,17 @@ namespace ProEventos.API.helpers
     {
         public ProEventosProfile()
         {
-            CreateMap<Evento, EventoDto>();
-            CreateMap<EventoDto, Evento>();
-            CreateMap<Lote, LoteDto>();
-            CreateMap<LoteDto, Lote>();  
-            CreateMap<RedeSocial, RedeSocialDto>(); 
-            // CreateMap<RedeSocialDto, RedeSocial>();  
-            CreateMap<Palestrante, PalestranteDto>(); 
-            // CreateMap<PalestranteDto, Palestrante>();
-           
+            // CreateMap<Evento, EventoDto>();
+            // CreateMap<EventoDto, Evento>();
+            // CreateMap<Lote, LoteDto>();
+            // CreateMap<LoteDto, Lote>();  
+            // CreateMap<RedeSocial, RedeSocialDto>(); 
+            // CreateMap<Palestrante, PalestranteDto>(); 
+            CreateMap<Evento, EventoDto>().ReverseMap();
+            CreateMap<Lote, LoteDto>().ReverseMap();
+            CreateMap<RedeSocial, RedeSocialDto>().ReverseMap();
+            CreateMap<Palestrante, PalestranteDto>().ReverseMap();
+
         }
     }
 }

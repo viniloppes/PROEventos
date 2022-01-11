@@ -12,6 +12,9 @@ using ProEventos.Persistence.Contextos;
 using ProEventos.Persistence.Contratos;
 using AutoMapper;
 using System;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace ProEventos.API
 {
@@ -69,6 +72,11 @@ namespace ProEventos.API
             .AllowAnyMethod()
             .AllowAnyOrigin()
             );
+
+            app.UseStaticFiles(new StaticFileOptions() {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Recursos")),
+                RequestPath = new PathString("/Recursos")
+            });
 
             app.UseEndpoints(endpoints =>
             {

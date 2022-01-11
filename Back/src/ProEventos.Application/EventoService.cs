@@ -63,6 +63,7 @@ namespace ProEventos.Application
                     var eventoRetorno = await _eventoPersist.GetEventoByIdAsync(evento.Id, false);
                     return _mapper.Map<EventoDto>(eventoRetorno);
                 }
+                
 
                 return null;
             }

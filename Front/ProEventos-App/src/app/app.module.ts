@@ -37,6 +37,7 @@ import { defineLocale } from 'ngx-bootstrap/chronos';
 import { ptBrLocale } from 'ngx-bootstrap/locale';
 import { LoteService } from './services/lote.service';
 import { NgxCurrencyModule } from 'ngx-currency';
+import { SafeURLPipe } from './helpers/SafeURL.pipe';
 defineLocale('pt-br', ptBrLocale);
 
 @NgModule({
@@ -55,6 +56,7 @@ defineLocale('pt-br', ptBrLocale);
     UserComponent,
     LoginComponent,
     RegistrationComponent,
+    SafeURLPipe
   ],
   imports: [
     BrowserModule,
