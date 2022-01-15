@@ -1,6 +1,3 @@
-using ProEventos.Domain;
-using Application.Dtos;
-
 namespace ProEventos.Application.Dtos
 {
     public class RedeSocialDto
@@ -11,6 +8,6 @@ namespace ProEventos.Application.Dtos
         public int? EventoId { get; set; }
         public EventoDto Evento { get; set; }
         public int? PalestranteId { get; set; }
-        public Palestrante Palestrante { get; set; }
+        public PalestranteDto Palestrante { get; set; }
     }
 }
